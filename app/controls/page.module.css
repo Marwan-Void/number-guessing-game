@@ -1,0 +1,111 @@
+::-moz-selection {
+  background-color: white;
+  color: black;
+}
+
+::selection {
+  background-color: white;
+  color: black;
+}
+
+.page {
+  height: 100%;
+  position: relative;
+}
+
+.home {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.home:hover {
+  padding: 15px;
+  margin: 15px;
+}
+
+.main {
+  padding: 20px;
+}
+
+.controls_title {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 5px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.controls_title:hover {
+  border: 2px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.main_para {
+  border: 2px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.key_info_para {
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.key_info_para:hover {
+  padding: 25px;
+  margin: 15px;
+}
+
+.btn_txt {
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.btn_txt:hover {
+  padding: 10px;
+}/*# sourceMappingURL=page.module.css.map */

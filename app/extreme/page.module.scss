@@ -1,0 +1,259 @@
+%flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin border-radius($radius: 8px){
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+@mixin transition($sec: 0.7s){
+    transition: $sec ease;
+    -webkit-transition: $sec ease;
+    -moz-transition: $sec ease;
+    -ms-transition: $sec ease;
+    -o-transition: $sec ease;
+}
+
+::selection {
+    background-color: white;
+    color: black;
+}
+
+.page {
+    position: relative;
+    @extend %flex_center;
+    background-color: darkred;
+    height: 100%;
+    color: white;
+}
+
+.main {
+    @extend %flex_center;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.main_title {
+    padding: 5px;
+    margin: 5px;
+    @include transition();
+    @include border-radius();
+    &:hover {
+        border: 3px solid white;
+        padding: 10px 30px;
+        margin: 10px;
+    }
+}
+
+.exit_btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    @include border-radius();
+    background-color: white;
+    color: black;
+    @include transition();
+    &:hover {
+        padding: 10px;
+        margin: 10px;
+    }
+    &::selection {
+        background-color: black;
+        color: white;
+    }
+}
+
+.back_btn {
+    position: absolute;
+    top: 58px;
+    left: 10px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    @include border-radius();
+    background-color: white;
+    color: black;
+    @include transition();
+    &:hover {
+        padding: 10px;
+        margin: 10px;
+    }
+    &::selection {
+        background-color: black;
+        color: white;
+    }
+}
+
+.next_btn {
+    position: absolute;
+    top: 108px;
+    left: 10px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    @include border-radius();
+    background-color: white;
+    color: black;
+    @include transition();
+    &:hover {
+        padding: 10px;
+        margin: 10px;
+    }
+    &::selection {
+        background-color: black;
+        color: white;
+    }
+}
+
+.result_box {
+    display: flex;
+    justify-content: right;
+    align-items: top;
+    flex-direction: column;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    @include border-radius();
+    background-color: white;
+    color: black;
+    @include transition();
+    &:hover {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+.result_txt_win, .result_txt_lose {
+    margin: 10px;
+}
+
+.result_txt_win::selection,
+.result_txt_lose::selection {
+    background-color: black;
+    color: white;
+}
+
+.game_box {
+    @extend %flex_center;
+    flex-direction: column;
+    margin: 30px;
+    padding: 30px;
+    border: 2px solid black;
+    @include border-radius();
+    @include transition();
+    &:hover {
+        padding: 50px;
+        margin: 50px;
+    }
+}
+
+.info_box {
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+.rules_p {
+    border: 2px solid black;
+    @include border-radius();
+    margin: 5px;
+    padding: 5px;
+    @include transition();
+    &:hover {
+        padding: 15px;
+        margin: 15px;
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.inp_box {
+    @extend %flex_center;
+    padding: 10px;
+    border: 2px solid black;
+    @include border-radius();
+    @include transition();
+    &:hover {
+        padding: 20px;
+        margin: 5px;
+    }
+}
+
+.inp {
+    font-weight: bold;
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid black;
+    @include border-radius();
+    @include transition();
+    &:hover {
+        padding: 10px;
+        margin: 15px;
+    }
+    &::selection {
+        background-color: black;
+        color: white;
+    }
+}
+
+.submit_btn {
+    padding: 5px;
+    border: 2px solid black;
+    @include border-radius();
+    @include transition();
+    &:hover {
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
+.status_box {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    @include border-radius();
+    @include transition();
+    &:hover {
+        padding: 30px;
+        margin: 30px;
+    }
+}
+
+.status_txt {
+    color: white;
+    font-weight: bold;
+}
+
+.rem_5 {
+    font-size: 5rem;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.none {
+    display: none;
+}

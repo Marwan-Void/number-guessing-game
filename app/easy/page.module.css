@@ -1,0 +1,319 @@
+.inp_box, .game_box, .main, .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::-moz-selection {
+  background-color: white;
+  color: black;
+}
+
+::selection {
+  background-color: white;
+  color: black;
+}
+
+.page {
+  position: relative;
+  background-color: green;
+  height: 100%;
+  color: white;
+}
+
+.main {
+  flex-direction: column;
+  margin: 20px;
+}
+
+.main_title {
+  padding: 5px;
+  margin: 5px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.main_title:hover {
+  border: 3px solid white;
+  padding: 10px 30px;
+  margin: 10px;
+}
+
+.exit_btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background-color: white;
+  color: black;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.exit_btn:hover {
+  padding: 10px;
+  margin: 10px;
+}
+.exit_btn::-moz-selection {
+  background-color: black;
+  color: white;
+}
+.exit_btn::selection {
+  background-color: black;
+  color: white;
+}
+
+.next_btn {
+  position: absolute;
+  top: 58px;
+  left: 10px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background-color: white;
+  color: black;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.next_btn:hover {
+  padding: 10px;
+  margin: 10px;
+}
+.next_btn::-moz-selection {
+  background-color: black;
+  color: white;
+}
+.next_btn::selection {
+  background-color: black;
+  color: white;
+}
+
+.result_box {
+  display: flex;
+  justify-content: right;
+  align-items: top;
+  flex-direction: column;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background-color: white;
+  color: black;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.result_box:hover {
+  padding: 20px;
+  margin: 20px;
+}
+
+.result_txt_win, .result_txt_lose {
+  margin: 10px;
+}
+
+.result_txt_win::-moz-selection, .result_txt_lose::-moz-selection {
+  background-color: black;
+  color: white;
+}
+
+.result_txt_win::selection,
+.result_txt_lose::selection {
+  background-color: black;
+  color: white;
+}
+
+.game_box {
+  flex-direction: column;
+  margin: 30px;
+  padding: 30px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.game_box:hover {
+  padding: 50px;
+  margin: 50px;
+}
+
+.info_box {
+  color: white;
+  padding: 10px;
+  margin: 5px;
+}
+
+.rules_p {
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  margin: 5px;
+  padding: 5px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.rules_p:hover {
+  padding: 15px;
+  margin: 15px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.inp_box {
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.inp_box:hover {
+  padding: 20px;
+  margin: 5px;
+}
+
+.inp {
+  font-weight: bold;
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.inp:hover {
+  padding: 10px;
+  margin: 15px;
+}
+.inp::-moz-selection {
+  background-color: black;
+  color: white;
+}
+.inp::selection {
+  background-color: black;
+  color: white;
+}
+
+.submit_btn {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.submit_btn:hover {
+  padding: 10px;
+  margin: 10px;
+}
+
+.status_box {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.status_box:hover {
+  padding: 30px;
+  margin: 30px;
+}
+
+.status_txt {
+  color: white;
+  font-weight: bold;
+}
+
+.rem_5 {
+  font-size: 5rem;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
+}/*# sourceMappingURL=page.module.css.map */
