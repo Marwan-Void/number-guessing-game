@@ -217,6 +217,17 @@
     background-color: black;
 }
 
+.footer {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    padding: 20px;
+}
+
+.copyright_para {
+    color: grey;
+}
+
 @media (width: 685){
     .page {
         display: flex;
