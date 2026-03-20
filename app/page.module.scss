@@ -29,9 +29,11 @@
     @extend %flex_center;
     height: 100%;
     position: relative;
+    overflow-x: hidden;
 }
 
 .controls {
+    background-color: black;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -46,6 +48,23 @@
     }
 }
 
+.appear_btn {
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    z-index: 5;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+    background-color: white;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+}
+
 .history_div {
     position: absolute;
     top: 0;
@@ -56,6 +75,11 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: none;
+    z-index: 10;
+}
+
+.hidden {
+    left: -200px !important;
 }
 
 .history_txt_div {
@@ -65,6 +89,7 @@
 
 .history_txt {
     background-color: black;
+    cursor: pointer;
     padding: 8px;
     margin: 5px;
     border: 2px solid white;

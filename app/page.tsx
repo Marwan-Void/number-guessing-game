@@ -17,6 +17,7 @@ function sum(...sum_num: string[]): string {
 }
 
 export default function Home(): JSX.Element {
+  const [aside_visibility, set_aside_visibility] = useState<boolean>(true);
   const [easy, set_easy] = useState<level>({
     wins: "0",
     loses: "0"
@@ -66,6 +67,13 @@ export default function Home(): JSX.Element {
   const imp_btn = useRef(null);
   const one_time_btn = useRef(null);
 
+  function handle_hide_aside(): void {
+    set_aside_visibility(false);
+  }
+  function handle_appear_aside(): void {
+    set_aside_visibility(true);
+  }
+
   useEffect(function (): void {
     const saved_easy: level = {
       wins: localStorage.getItem("easy_wins") || "0",
@@ -103,9 +111,10 @@ export default function Home(): JSX.Element {
   return (
     <div className={styles.page}>
       <Link href={"./controls"} className={styles.controls}>View Controls</Link>
-      <aside className={styles.history_div}>
+      <button type="button" className={styles.appear_btn} onClick={handle_appear_aside}></button>
+      <aside className={`${styles.history_div} ${!aside_visibility ? styles.hidden : ""}`}>
         <div className={styles.history_txt_div}>
-          <h2 className={styles.history_txt}>History</h2>
+          <h2 className={styles.history_txt} onClick={handle_hide_aside}>History</h2>
         </div>
         <div className={styles.levels_history}>
           <div className={`${styles.easy} ${styles.level_box}`}>
