@@ -6,9 +6,7 @@ System Chooses a Random Number and You Should Guess That Number
 Sorry For Bad Style 😅.
 If You Have Any Advice For Me, Please Tell Me.
 
-If You Wanna Visit The Site https://number-guessing-game-codex.vercel.app/ 
-
-### This is not an Important Thing
+If You Wanna Visit The Site https://number-guessing-game-codex.vercel.app/
 
 <!-- This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
