@@ -108,4 +108,15 @@
 }
 .btn_txt:hover {
   padding: 10px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  padding: 20px;
+}
+
+.copyright_para {
+  color: grey;
 }/*# sourceMappingURL=page.module.css.map */

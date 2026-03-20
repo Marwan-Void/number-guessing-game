@@ -18,6 +18,9 @@ export default function Home(): JSX.Element {
             </p>
         </p>
       </main>
+      <footer className={styles.footer}>
+        <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Codex</p>
+      </footer>
     </div>
   );
 }
