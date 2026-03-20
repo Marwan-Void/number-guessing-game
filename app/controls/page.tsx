@@ -16,6 +16,9 @@ export default function Home(): JSX.Element {
             <p className={styles.key_info_para}>
                 <span className={styles.btn_txt}>Enter</span> =&gt; Submit Button
             </p>
+            <p className={styles.key_info_para}>
+                <span className={styles.btn_txt}>Ctrl + R</span> =&gt; Refresh Page (If There Is ANY Error)
+            </p>
         </p>
       </main>
       <footer className={styles.footer}>
