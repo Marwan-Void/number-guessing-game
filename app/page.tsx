@@ -17,7 +17,7 @@ function sum(...sum_num: string[]): string {
 }
 
 export default function Home(): JSX.Element {
-  const [aside_visibility, set_aside_visibility] = useState<boolean>(true);
+  const [aside_visibility, set_aside_visibility] = useState<boolean>(false);
   const [easy, set_easy] = useState<level>({
     wins: "0",
     loses: "0"
