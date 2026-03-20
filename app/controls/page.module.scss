@@ -93,7 +93,10 @@
 .footer {
     position: absolute;
     bottom: 0;
-    margin: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
