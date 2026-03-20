@@ -80,11 +80,11 @@ export default function Medium(): JSX.Element {
             <Link href={"../"} className={styles.exit_btn} ref={exit_btn}> Exit </Link>
             <Link href={"../easy"} className={styles.back_btn}> Back </Link>
             <Link href={"../hard"} className={styles.next_btn}> Next </Link>
-            <div className={styles.result_box}>
+            <aside className={styles.result_box}>
                 <span className={styles.result_txt_win}> Wins: {wins} </span>
                 <span className={styles.result_txt_lose}> Loses: {loses} </span>
-            </div>
-            <div className={styles.main}>
+            </aside>
+            <main className={styles.main}>
                 <h1 className={styles.main_title}>Medium Mode</h1>
                 <div className={styles.game_box}>
                     <div className={player_status != "You Win." && player_status != "You Lose." ? styles.info_box : styles.none}>
@@ -112,7 +112,10 @@ export default function Medium(): JSX.Element {
                         <span className={player_status == "You Lose." ? styles.bold : styles.none}>It&apos;s {num}</span>
                     </div>
                 </div>
-            </div>
+            </main>
+            <footer className={styles.footer}>
+                <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Codex</p>
+            </footer>
         </div>
     );
 }
