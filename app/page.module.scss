@@ -20,6 +20,14 @@
     -o-transition: $sec ease;
 }
 
+@mixin translate_x($pxs: 0){
+    transform: translateX($pxs);
+    -webkit-transform: translateX($pxs);
+    -moz-transform: translateX($pxs);
+    -ms-transform: translateX($pxs);
+    -o-transform: translateX($pxs);
+}
+
 ::selection {
     background-color: white;
     color: black;
@@ -76,19 +84,24 @@
     border-bottom-left-radius: 0;
     border-left: none;
     z-index: 10;
+    animation: 3s ease appear_aside !important;
+    -webkit-animation: 3s ease appear_aside !important;
 }
 
 .hidden {
-    left: -200px !important;
+    animation: 3s ease hidden_aside !important;
+    -webkit-animation: 3s ease hidden_aside !important;
+    @include translate_x(-200px);
 }
 
 .history_txt_div {
     width: 100%;
     padding: 20px;
+    background-color: black;
+    border-top-right-radius: 8px;
 }
 
 .history_txt {
-    background-color: black;
     cursor: pointer;
     padding: 8px;
     margin: 5px;
@@ -222,6 +235,9 @@
     bottom: 0;
     margin: auto;
     padding: 20px;
+    z-index: 100;
+    background-color: black;
+    @include border-radius();
 }
 
 .copyright_para {
@@ -235,5 +251,23 @@
         align-items: right;
         height: 100%;
         position: relative;
+    }
+}
+
+@keyframes hidden_aside {
+    from {
+        @include translate_x(0);
+    }
+    to {
+        @include translate_x(-200px);
+    }
+}
+
+@keyframes appear_aside {
+    from {
+        @include translate_x(-200px);
+    }
+    to {
+        @include translate_x(0);
     }
 }
