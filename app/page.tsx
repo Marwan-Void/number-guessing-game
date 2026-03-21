@@ -116,7 +116,13 @@ export default function Home(): JSX.Element {
     <div className={styles.page}>
       <Link href={"./controls"} className={styles.controls}>View Controls</Link>
       <button type="button" className={styles.appear_btn} onClick={handle_appear_aside}></button>
-      <aside className={`${styles.history_div} ${!aside_visibility && clicked ? `${styles.hidden} ${styles.hidden_ani}` : !aside_visibility && !clicked ? styles.hidden : styles.appear}`}>
+      <aside className={`
+        ${styles.history_div} 
+        ${!aside_visibility && clicked 
+          ? `${styles.hidden} ${styles.hidden_ani}` 
+          : !aside_visibility && !clicked 
+          ? styles.hidden 
+          : styles.appear}`}>
         <div className={styles.history_txt_div}>
           <h2 className={styles.history_txt} onClick={handle_hide_aside}>History</h2>
         </div>
