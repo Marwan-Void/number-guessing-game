@@ -1,4 +1,4 @@
-# Number Guessing Game BY (Marwan Codex)
+# Number Guessing Game BY Marwan Codex
 ### In This Game:
 System Chooses a Random Number and You Should Guess That Number
 
