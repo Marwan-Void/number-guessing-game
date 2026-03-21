@@ -28,6 +28,14 @@
     -o-transform: translateX($pxs);
 }
 
+@mixin translate_y($pxs: 0){
+    transform: translateY($pxs);
+    -webkit-transform: translateY($pxs);
+    -moz-transform: translateY($pxs);
+    -ms-transform: translateY($pxs);
+    -o-transform: translateY($pxs);
+}
+
 ::selection {
     background-color: white;
     color: black;
@@ -50,6 +58,8 @@
     border: 2px solid white;
     @include border-radius();
     @include transition();
+    animation: 5s ease to-left !important;
+    -webkit-animation: 5s ease to-left !important;
     &:hover {
         padding: 15px;
         margin: 20px;
@@ -84,14 +94,20 @@
     border-bottom-left-radius: 0;
     border-left: none;
     z-index: 10;
-    animation: 3s ease appear_aside !important;
-    -webkit-animation: 3s ease appear_aside !important;
 }
 
 .hidden {
-    animation: 3s ease hidden_aside !important;
-    -webkit-animation: 3s ease hidden_aside !important;
     @include translate_x(-200px);
+}
+
+.hidden_ani {
+    animation: 1s ease hide_aside !important;
+    -webkit-animation: 1s ease hide_aside !important;
+}
+
+.appear {
+    animation: 1s ease appear_aside !important;
+    -webkit-animation: 1s ease appear_aside !important;
 }
 
 .history_txt_div {
@@ -140,6 +156,8 @@
 .main {
     @extend %flex_center;
     flex-direction: column;
+    animation: 5s ease to-top !important;
+    -webkit-animation: 5s ease to-top !important;
 }
 
 .choose_title {
@@ -254,7 +272,7 @@
     }
 }
 
-@keyframes hidden_aside {
+@keyframes hide_aside {
     from {
         @include translate_x(0);
     }
@@ -266,6 +284,24 @@
 @keyframes appear_aside {
     from {
         @include translate_x(-200px);
+    }
+    to {
+        @include translate_x(0);
+    }
+}
+
+@keyframes to-top {
+    from {
+        @include translate_y(800px);
+    }
+    to {
+        @include translate_y(0);
+    }
+}
+
+@keyframes to-left {
+    from {
+        @include translate_x(200px);
     }
     to {
         @include translate_x(0);

@@ -17,6 +17,7 @@ function sum(...sum_num: string[]): string {
 }
 
 export default function Home(): JSX.Element {
+  const [clicked, set_clicked] = useState<boolean>(false);
   const [aside_visibility, set_aside_visibility] = useState<boolean>(false);
   const [easy, set_easy] = useState<level>({
     wins: "0",
@@ -72,6 +73,9 @@ export default function Home(): JSX.Element {
   }
   function handle_appear_aside(): void {
     set_aside_visibility(true);
+    if(!clicked){
+      set_clicked(true);
+    }
   }
 
   useEffect(function (): void {
@@ -112,7 +116,7 @@ export default function Home(): JSX.Element {
     <div className={styles.page}>
       <Link href={"./controls"} className={styles.controls}>View Controls</Link>
       <button type="button" className={styles.appear_btn} onClick={handle_appear_aside}></button>
-      <aside className={`${styles.history_div} ${!aside_visibility ? styles.hidden : ""}`}>
+      <aside className={`${styles.history_div} ${!aside_visibility && clicked ? `${styles.hidden} ${styles.hidden_ani}` : !aside_visibility && !clicked ? styles.hidden : styles.appear}`}>
         <div className={styles.history_txt_div}>
           <h2 className={styles.history_txt} onClick={handle_hide_aside}>History</h2>
         </div>
