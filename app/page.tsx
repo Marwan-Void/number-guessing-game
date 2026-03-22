@@ -114,7 +114,7 @@ export default function Home(): JSX.Element {
   }, []);
   return (
     <div className={styles.page}>
-      <Link href={"./controls"} className={styles.controls}>View Controls</Link>
+      <Link href={"./controls"} className={styles.controls}>Controls</Link>
       <button type="button" className={styles.appear_btn} onClick={handle_appear_aside}></button>
       <aside className={`
         ${styles.history_div} 

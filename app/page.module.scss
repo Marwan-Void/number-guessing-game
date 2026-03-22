@@ -20,7 +20,7 @@
     -o-transition: $sec ease;
 }
 
-@mixin translate_x($pxs: 0){
+@mixin translate-x($pxs: 0){
     transform: translateX($pxs);
     -webkit-transform: translateX($pxs);
     -moz-transform: translateX($pxs);
@@ -28,7 +28,7 @@
     -o-transform: translateX($pxs);
 }
 
-@mixin translate_y($pxs: 0){
+@mixin translate-y($pxs: 0){
     transform: translateY($pxs);
     -webkit-transform: translateY($pxs);
     -moz-transform: translateY($pxs);
@@ -58,8 +58,8 @@
     border: 2px solid white;
     @include border-radius();
     @include transition();
-    animation: 5s ease to-left !important;
-    -webkit-animation: 5s ease to-left !important;
+    animation: 5s ease to-left;
+    -webkit-animation: 5s ease to-left;
     &:hover {
         padding: 15px;
         margin: 20px;
@@ -97,17 +97,17 @@
 }
 
 .hidden {
-    @include translate_x(-200px);
+    @include translate-x(-200px);
 }
 
 .hidden_ani {
-    animation: 1s ease hide_aside !important;
-    -webkit-animation: 1s ease hide_aside !important;
+    animation: 1s ease hide-aside !important;
+    -webkit-animation: 1s ease hide-aside !important;
 }
 
 .appear {
-    animation: 1s ease appear_aside !important;
-    -webkit-animation: 1s ease appear_aside !important;
+    animation: 1s ease appear-aside !important;
+    -webkit-animation: 1s ease appear-aside !important;
 }
 
 .history_txt_div {
@@ -118,6 +118,7 @@
 }
 
 .history_txt {
+    text-align: center;
     cursor: pointer;
     padding: 8px;
     margin: 5px;
@@ -156,6 +157,7 @@
 .main {
     @extend %flex_center;
     flex-direction: column;
+    background-color: black;
     animation: 5s ease to-top !important;
     -webkit-animation: 5s ease to-top !important;
 }
@@ -262,48 +264,122 @@
     color: grey;
 }
 
-@media (width: 685){
-    .page {
-        display: flex;
-        justify-content: right;
-        align-items: right;
-        height: 100%;
-        position: relative;
+@keyframes hide-aside {
+    from {
+        @include translate-x(0);
+    }
+    to {
+        @include translate-x(-200px);
     }
 }
 
-@keyframes hide_aside {
+@keyframes hide-aside-media {
     from {
-        @include translate_x(0);
+        @include translate-x(0);
     }
     to {
-        @include translate_x(-200px);
+        @include translate-x(-1000px);
     }
 }
 
-@keyframes appear_aside {
+@keyframes appear-aside {
     from {
-        @include translate_x(-200px);
+        @include translate-x(-200px);
     }
     to {
-        @include translate_x(0);
+        @include translate-x(0);
+    }
+}
+
+@keyframes appear-aside-media {
+    from {
+        @include translate-x(-1000px);
+    }
+    to {
+        @include translate-x(0);
     }
 }
 
 @keyframes to-top {
     from {
-        @include translate_y(800px);
+        @include translate-y(800px);
     }
     to {
-        @include translate_y(0);
+        @include translate-y(0);
     }
 }
 
 @keyframes to-left {
     from {
-        @include translate_x(200px);
+        @include translate-x(200px);
     }
     to {
-        @include translate_x(0);
+        @include translate-x(0);
+    }
+}
+
+@media (max-width: 700px){
+    .history_div {
+        width: 100%;
+        height: 100%;
+        @include border-radius(0);
+        z-index: 100;
+    }
+
+    .hidden {
+        @include translate-x(-1000px);
+    }
+
+    .hidden_ani {
+        animation: 2s ease hide-aside-media !important;
+        -webkit-animation: 2s ease hide-aside-media !important;
+    }
+
+    .appear {
+        animation: 2s ease appear-aside-media !important;
+        -webkit-animation: 2s ease appear-aside-media !important;
+    }
+
+    .footer {
+        right: 5px;
+        padding: 10px;
+        font-size: 0.8rem;
+        z-index: 10;
+    }
+}
+
+@media (max-width: 620px){
+    .controls {
+        &:hover {
+            padding: 10px;
+            margin: 5px;
+            background-color: white;
+            color: black;
+            border-color: black;
+        }
+    }
+}
+
+@media (max-width: 570px){
+    .controls {
+        top: 93%;
+        right: 50%;
+        height: fit-content;
+        animation: none;
+        -webkit-animation: none;
+    }
+
+    .choose_title {
+        &:hover {
+            padding: 20px;
+            margin: 0;
+        }
+    }
+
+    .choice_btn {
+        &:hover {
+            padding: 15px;
+            margin: 15px;
+        }
     }
 }
