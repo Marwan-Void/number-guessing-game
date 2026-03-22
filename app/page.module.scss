@@ -365,7 +365,7 @@
 @media (max-width: 570px){
     .controls {
         top: 93%;
-        right: 50%;
+        right: 40%;
         height: fit-content;
         animation: none;
         -webkit-animation: none;
@@ -383,5 +383,30 @@
             padding: 15px;
             margin: 15px;
         }
+    }
+}
+
+@media (max-width: 380px){
+    .controls {
+        border: none;
+        background-color: transparent;
+        text-decoration: underline;
+        font-size: 1rem;
+        top: 93.5%;
+        &:hover {
+            background-color: transparent;
+            color: white;
+        }
+    }
+
+    .main_title {
+        font-size: 1.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer {
+        background-color: transparent;
+        font-size: 0.5rem;
     }
 }
