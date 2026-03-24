@@ -3,9 +3,34 @@ import { JSX, useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 
-interface level {
-  wins: string | number,
-  loses: string | number
+export enum Range {
+  Easy_OneTime = 11,
+  Medium_Imp = 101,
+  Hard_Extreme = 1001,
+}
+export enum Times {
+  Easy_Imp = 4,
+  Medium = 6,
+  Hard = 12,
+  Extreme = 10,
+  OneTime = 1
+}
+
+class Level {
+  private static _counter: number = 0;
+  wins: (string | number);
+  loses: (string | number);
+  type_of_obj: string;
+  constructor(wins: (string | number) = "0", loses: (string | number) = "0", kind: string = "Level"){
+    this.wins = wins;
+    this.loses = loses;
+    this.type_of_obj = kind;
+    Level._counter++;
+  }
+
+  static get all_objs(): number {
+    return (Level._counter);
+  }
 }
 
 function sum(...sum_num: string[]): string {
@@ -19,32 +44,14 @@ function sum(...sum_num: string[]): string {
 export default function Home(): JSX.Element {
   const [clicked, set_clicked] = useState<boolean>(false);
   const [aside_visibility, set_aside_visibility] = useState<boolean>(false);
-  const [easy, set_easy] = useState<level>({
-    wins: "0",
-    loses: "0"
-  });
-  const [med, set_med] = useState<level>({
-    wins: "0",
-    loses: "0"
-  });
-  const [hard, set_hard] = useState<level>({
-    wins: "0",
-    loses: "0"
-  });
-  const [ext, set_ext] = useState<level>({
-    wins: "0",
-    loses: "0"
-  });
-  const [imp, set_imp] = useState<level>({
-    wins: "0",
-    loses: "0"
-  });
-  const [one_time, set_one_time] = useState<level>({
-    wins: "0",
-    loses: "0"
-  });
-  const total: level = {
-    wins: sum(
+  const [easy, set_easy] = useState<Level>(new Level());
+  const [med, set_med] = useState<Level>(new Level());
+  const [hard, set_hard] = useState<Level>(new Level());
+  const [ext, set_ext] = useState<Level>(new Level());
+  const [imp, set_imp] = useState<Level>(new Level());
+  const [one_time, set_one_time] = useState<Level>(new Level());
+  const total: Level = new Level(
+    sum(
       easy.wins as string,
       med.wins as string,
       hard.wins as string,
@@ -52,15 +59,16 @@ export default function Home(): JSX.Element {
       imp.wins as string,
       one_time.wins as string,
     ),
-    loses: sum(
+    sum(
       easy.loses as string,
       med.loses as string,
       hard.loses as string,
       ext.loses as string,
       imp.loses as string,
       one_time.loses as string,
-    )
-  }
+    ),
+    "Total Obj"
+  ); 
   const easy_btn = useRef(null);
   const med_btn = useRef(null);
   const hard_btn = useRef(null);
@@ -79,30 +87,36 @@ export default function Home(): JSX.Element {
   }
 
   useEffect(function (): void {
-    const saved_easy: level = {
-      wins: localStorage.getItem("easy_wins") || "0",
-      loses: localStorage.getItem("easy_loses") || "0"
-    }
-    const saved_med: level = {
-      wins: localStorage.getItem("med_wins") || "0",
-      loses: localStorage.getItem("med_loses") || "0"
-    }
-    const saved_hard: level = {
-      wins: localStorage.getItem("hard_wins") || "0",
-      loses: localStorage.getItem("hard_loses") || "0"
-    }
-    const saved_ext: level = {
-      wins: localStorage.getItem("ext_wins") || "0",
-      loses: localStorage.getItem("ext_loses") || "0"
-    }
-    const saved_imp: level = {
-      wins: localStorage.getItem("imp_wins") || "0",
-      loses: localStorage.getItem("imp_loses") || "0"
-    }
-    const saved_one_time: level = {
-      wins: localStorage.getItem("one_time_wins") || "0",
-      loses: localStorage.getItem("one_time_loses") || "0"
-    }
+    const saved_easy: Level = new Level(
+      localStorage.getItem("easy_wins") || "0",
+      localStorage.getItem("easy_loses") || "0",
+      "Storage Obj"
+    );
+    const saved_med: Level = new Level(
+      localStorage.getItem("med_wins") || "0",
+      localStorage.getItem("med_loses") || "0",
+      "Storage Obj"
+    );
+    const saved_hard: Level = new Level(
+      localStorage.getItem("hard_wins") || "0",
+      localStorage.getItem("hard_loses") || "0",
+      "Storage Obj"
+    );
+    const saved_ext: Level = new Level(
+      localStorage.getItem("ext_wins") || "0",
+      localStorage.getItem("ext_loses") || "0",
+      "Storage Obj"
+    );
+    const saved_imp: Level = new Level(
+      localStorage.getItem("imp_wins") || "0",
+      localStorage.getItem("imp_loses") || "0",
+      "Storage Obj"
+    );
+    const saved_one_time: Level = new Level(
+      localStorage.getItem("one_time_wins") || "0",
+      localStorage.getItem("one_time_loses") || "0",
+      "Storage Obj"
+    );
     setTimeout(function (): void {
       set_easy(saved_easy);
       set_med(saved_med);

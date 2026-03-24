@@ -1,12 +1,13 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
+import { Range, Times } from "../page";
 import styles from "./page.module.css";
 import Link from "next/link";
 
-const random_num: number = Math.floor(Math.random() * 11);
+const random_num: number = Math.floor(Math.random() * Range.Easy_OneTime);
 export default function Easy(): JSX.Element {
     const [num, set_num] = useState<number>(random_num);
-    const [counter, set_counter] = useState<number>(4);
+    const [counter, set_counter] = useState<number>(Times.Easy_Imp);
     const [wins, set_wins] = useState<number>(0);
     const [loses, set_loses] = useState<number>(0);
     const [player_status, set_player_status] = useState<string>("");
@@ -23,8 +24,8 @@ export default function Easy(): JSX.Element {
                 localStorage.setItem("easy_wins", (wins + 1).toString());
                 set_player_status("You Win.");
             }
-            else if(val > 10 || val < 0){
-                set_player_status("The Number is between 0 and 10 ( and also can be 10 or 0 )");
+            else if(val > (Range.Easy_OneTime - 1) || val < 0){
+                set_player_status(`The Number is between 0 and ${Range.Easy_OneTime - 1} ( and also can be ${Range.Easy_OneTime - 1} or 0 )`);
             }
             else if(val > num){
                 set_player_status("The Number is Smaller Than That...");
@@ -47,9 +48,9 @@ export default function Easy(): JSX.Element {
         }
     }
     function handle_again(): void {
-        set_counter(4);
+        set_counter(Times.Easy_Imp);
         set_player_status("");
-        set_num(Math.floor(Math.random() * 11));
+        set_num(Math.floor(Math.random() * Range.Easy_OneTime));
         inp.current?.focus();
     }
     function handle_key_down(event: React.KeyboardEvent<HTMLInputElement>): void {
@@ -91,9 +92,9 @@ export default function Easy(): JSX.Element {
                         <p className={styles.rules_p}>
                             You Should Guess The Number in 
                             <br />
-                            <span className={styles.bold}> range (0 - 10) </span>
+                            <span className={styles.bold}> range (0 - {Range.Easy_OneTime - 1}) </span>
                             <br />
-                            You Have <span className={`${styles.bold} ${styles.italic}`}> 4 Times Only.</span>
+                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Times.Easy_Imp} Times Only.</span>
                         </p>
                         <span className={styles.bold}> Left: {counter} </span>
                     </div>

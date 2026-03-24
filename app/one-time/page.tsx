@@ -1,9 +1,10 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
+import { Range, Times } from "../page";
 import styles from "./page.module.css";
 import Link from "next/link";
 
-const random_num: number = Math.floor(Math.random() * 11);
+const random_num: number = Math.floor(Math.random() * Range.Easy_OneTime);
 export default function One_Time(): JSX.Element {
     const [num, set_num] = useState<number>(random_num);
     const [wins, set_wins] = useState<number>(0);
@@ -27,8 +28,8 @@ export default function One_Time(): JSX.Element {
                 localStorage.setItem("one_time_loses", (loses + 1).toString());
                 set_player_status("You Lose.");
             }
-            else if(val > 10 || val < 0){
-                set_player_status("The Number is between 0 and 10 ( and also can be 10 or 0 )");
+            else if(val > (Range.Easy_OneTime - 1) || val < 0){
+                set_player_status(`The Number is between 0 and ${Range.Easy_OneTime - 1} ( and also can be ${Range.Easy_OneTime - 1} or 0 )`);
             }
             else {
                 set_player_status("Please Enter A Number.");
@@ -38,7 +39,7 @@ export default function One_Time(): JSX.Element {
     }
     function handle_again(): void {
         set_player_status("");
-        set_num(Math.floor(Math.random() * 11));
+        set_num(Math.floor(Math.random() * Range.Easy_OneTime));
         inp.current?.focus();
     }
     function handle_key_down(event: React.KeyboardEvent<HTMLInputElement>): void {
@@ -80,9 +81,9 @@ export default function One_Time(): JSX.Element {
                         <p className={styles.rules_p}>
                             You Should Guess The Number in 
                             <br />
-                            <span className={styles.bold}> range (0 - 10) </span>
+                            <span className={styles.bold}> range (0 - {Range.Easy_OneTime - 1}) </span>
                             <br />
-                            You Have <span className={`${styles.bold} ${styles.italic}`}> 1 Times Only.</span>
+                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Times.OneTime} Time Only.</span>
                         </p>
                     </div>
                     <div className={player_status != "You Win." && player_status != "You Lose." ? styles.inp_box : styles.none}>
