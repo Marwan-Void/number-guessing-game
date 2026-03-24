@@ -99,7 +99,14 @@ export default function Easy(): JSX.Element {
                         <span className={styles.bold}> Left: {counter} </span>
                     </div>
                     <div className={player_status != "You Win." && player_status != "You Lose." ? styles.inp_box : styles.none}>
-                        <input type="text" className={styles.inp} onKeyDown={handle_key_down} enterKeyHint="done" ref={inp}/>
+                        <input 
+                            type="text" 
+                            className={styles.inp} 
+                            onKeyDown={handle_key_down} 
+                            enterKeyHint="done" 
+                            inputMode="tel"
+                            pattern="[0-9]*"
+                            ref={inp}/>
                         <button onClick={handle_click} className={styles.submit_btn}> Submit </button>
                     </div>
                     <div 
