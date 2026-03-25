@@ -342,6 +342,10 @@
     padding: 30px;
     margin: 30px;
   }
+  .info_box {
+    padding: 5px;
+    margin: 0;
+  }
   .rules_p:hover {
     padding: 8px;
     margin: 5px;
