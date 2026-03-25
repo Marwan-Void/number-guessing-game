@@ -4,6 +4,10 @@ System Chooses a Random Number and You Should Guess That Number
 
 Sorry For Bad Style 😅.
 
+### Used Tech:
+1. React + TSX + Next.js
+2. Sass (.scss)
+
 If You Have Any Advice Or You Found Any Issue, Please Tell Me.
 
 ## To Visit The Site https://number-guessing-game-codex.vercel.app/

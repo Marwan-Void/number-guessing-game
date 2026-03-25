@@ -1,25 +1,4 @@
-%flex_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin border-radius($radius: 8px){
-    border-radius: $radius;
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
-}
-
-@mixin transition($sec: 0.7s){
-    transition: $sec ease;
-    -webkit-transition: $sec ease;
-    -moz-transition: $sec ease;
-    -ms-transition: $sec ease;
-    -o-transition: $sec ease;
-}
-
+@use "../_sass-methods.module" as *;
 ::selection {
     background-color: black;
     color: white;
@@ -239,4 +218,129 @@
 
 .copyright_para {
     color: grey;
+}
+
+@media (max-width: 390px){
+    .result_box {
+        &:hover {
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+
+    .game_box {
+        &:hover {
+            padding: 30px;
+            margin: 30px;
+        }
+    }
+
+    .rules_p {
+        &:hover {
+            padding: 8px;
+            margin: 5px;
+        }
+    }
+
+    .inp_box {
+        &:hover {
+            padding: 10px;
+            margin: 0;
+        }
+    }
+
+    .inp {
+        &:hover {
+            padding: 8px;
+            margin: 10px;
+        }
+    }
+    
+    .submit_btn {
+        &:hover {
+            padding: 8px;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 355px){
+    .game_box {
+        padding: 10px;
+        margin: 10px;
+        &:hover {
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+}
+
+@media (max-width: 320px){
+    .game_box {
+        padding: 5px;
+        margin: 5px;
+        &:hover {
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+}
+
+@media (max-width: 305px){
+    .game_box {
+        padding: 2px;
+        margin: 2px;
+        &:hover {
+            padding: 2px;
+            margin: 2px;
+        }
+    }
+}
+
+@media (max-width: 300px){
+    .game_box {
+        padding: 1px;
+        margin: 0;
+        &:hover {
+            padding: 1px;
+            margin: 0;
+        }
+    }
+
+    .inp {
+        padding: 5px;
+        margin: 2px;
+        &:hover {
+            padding: 5px;
+            margin: 2px;
+        }
+    }
+    
+    .submit_btn {
+        padding: 5px;
+        margin: 0;
+        &:hover {
+            padding: 5px;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 270px){
+    .game_box {
+        padding: 2px;
+        margin: 2px;
+        &:hover {
+            padding: 2px;
+            margin: 2px;
+        }
+    }
+
+    .inp_box {
+        flex-direction: column;
+    }
+
+    .submit_btn {
+        width: 100%;
+    }
 }

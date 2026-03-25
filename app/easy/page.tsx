@@ -106,14 +106,16 @@ export default function Easy(): JSX.Element {
                             enterKeyHint="done" 
                             inputMode="tel"
                             pattern="[0-9]*"
-                            ref={inp}/>
+                            ref={inp}
+                        />
                         <button onClick={handle_click} className={styles.submit_btn}> Submit </button>
                     </div>
                     <div 
-                    className={player_status == "You Win." || player_status == "You Lose." ? `${styles.status_box} ${styles.rem_5} ${styles.pointer}` 
-                        : player_status.length != 0 ? styles.status_box 
-                        : styles.none} 
-                    onClick={player_status == "You Win." || player_status == "You Lose." ? handle_again : (): void => {}}>
+                        className={player_status == "You Win." || player_status == "You Lose." ? `${styles.status_box} ${styles.rem_5} ${styles.pointer}` 
+                            : player_status.length != 0 ? styles.status_box 
+                            : styles.none} 
+                        onClick={player_status == "You Win." || player_status == "You Lose." ? handle_again : (): void => {}}
+                    >
                         <span className={player_status.length != 0 ? styles.status_txt : styles.none}>{player_status}</span>
                         <br />
                         <span className={player_status == "You Lose." ? styles.bold : styles.none}>It&apos;s {num}</span>

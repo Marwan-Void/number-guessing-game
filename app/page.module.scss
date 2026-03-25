@@ -1,46 +1,4 @@
-%flex_center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin border-radius($radius: 8px){
-    border-radius: $radius;
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
-}
-
-@mixin transition($sec: 0.7s){
-    transition: $sec ease;
-    -webkit-transition: $sec ease;
-    -moz-transition: $sec ease;
-    -ms-transition: $sec ease;
-    -o-transition: $sec ease;
-}
-
-@mixin translate-x($pxs: 0){
-    transform: translateX($pxs);
-    -webkit-transform: translateX($pxs);
-    -moz-transform: translateX($pxs);
-    -ms-transform: translateX($pxs);
-    -o-transform: translateX($pxs);
-}
-
-@mixin translate-y($pxs: 0){
-    transform: translateY($pxs);
-    -webkit-transform: translateY($pxs);
-    -moz-transform: translateY($pxs);
-    -ms-transform: translateY($pxs);
-    -o-transform: translateY($pxs);
-}
-
-::selection {
-    background-color: white;
-    color: black;
-}
-
+@use "../_sass-methods.module" as *;
 .page {
     @extend %flex_center;
     height: 100%;
@@ -160,8 +118,8 @@
     @extend %flex_center;
     flex-direction: column;
     background-color: black;
-    animation: 5s ease to-top !important;
-    -webkit-animation: 5s ease to-top !important;
+    animation: 5s ease to-top;
+    -webkit-animation: 5s ease to-top;
 }
 
 .choose_title {
@@ -296,24 +254,6 @@
 @keyframes appear-aside-media {
     from {
         @include translate-x(-1000px);
-    }
-    to {
-        @include translate-x(0);
-    }
-}
-
-@keyframes to-top {
-    from {
-        @include translate-y(800px);
-    }
-    to {
-        @include translate-y(0);
-    }
-}
-
-@keyframes to-left {
-    from {
-        @include translate-x(200px);
     }
     to {
         @include translate-x(0);
