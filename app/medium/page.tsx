@@ -93,7 +93,7 @@ export default function Medium(): JSX.Element {
                         <p className={styles.rules_p}>
                             You Should Guess The Number in 
                             <br />
-                            <span className={styles.bold}> range (0 - {Range.Medium_Imp}) </span>
+                            <span className={styles.bold}> range (0 - {Range.Medium_Imp - 1}) </span>
                             <br />
                             You Have <span className={`${styles.bold} ${styles.italic}`}> {Times.Medium} Times Only.</span>
                         </p>
