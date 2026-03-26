@@ -1,3 +1,8 @@
+::selection {
+    background-color: white;
+    color: black;
+}
+
 %flex_center {
     display: flex;
     justify-content: center;
@@ -34,11 +39,6 @@
     -moz-transform: translateY($pxs);
     -ms-transform: translateY($pxs);
     -o-transform: translateY($pxs);
-}
-
-::selection {
-    background-color: white;
-    color: black;
 }
 
 @keyframes to-top {

@@ -2,7 +2,7 @@
 .page {
     @extend %flex_center;
     background-color: green;
-    height: 100%;
+    min-height: 100%;
     overflow-x: hidden;
     position: relative;
 }

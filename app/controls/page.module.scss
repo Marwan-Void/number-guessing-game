@@ -1,16 +1,6 @@
 @use "../_sass-methods.module" as *;
-
-
-
-
-
-::selection {
-    background-color: white;
-    color: black;
-}
-
 .page {
-    height: 100%;
+    min-height: 100%;
     position: relative;
 }
 
@@ -53,8 +43,8 @@
 }
 
 .key_info_para {
-    margin: 10px;
     padding: 20px;
+    margin: 10px;
     border: 2px solid white;
     @include border-radius();
     @include transition();
@@ -74,17 +64,73 @@
     }
 }
 
+.info_txt, .btn_txt {
+    text-align: center;
+}
+
 .footer {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    @extend %flex_center;
+    margin: 0;
 }
 
 .copyright_para {
+    padding: 10px;
     color: grey;
+    background-color: black;
+    @include border-radius();
+}
+
+@media (max-width: 540px){
+    .btn_txt, .info_txt {
+        display: inline-block;
+        width: 100%;
+    }
+
+    .info_txt {
+        padding: 10px;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 320px){
+    .key_info_para {
+        &:hover {
+            padding: 20px;
+            margin: 10px;
+        }
+    }
+
+    .controls_title {
+        &:hover {
+            padding: 10px;
+            margin: 5px;
+        }
+    }
+}
+
+@media (max-width: 290px){
+    .home {
+        &:hover {
+            padding: 10px;
+            margin: 5px;
+            background-color: white;
+            color: black;
+            &::selection {
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+
+    .controls_title {
+        &:hover {
+            padding: 0;
+            margin: 5px;
+            border: none;
+        }
+    }
 }
