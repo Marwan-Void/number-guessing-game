@@ -2,8 +2,6 @@
 ### In This Game:
 System Chooses a Random Number and You Should Guess That Number.
 
-Sorry For Bad Style 😅.
-
 ### Used Tech:
 1. React + TSX + Next.js
 2. Sass (.scss)
