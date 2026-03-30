@@ -66,6 +66,24 @@
     }
 }
 
+.next_btn {
+    position: absolute;
+    top: 108px;
+    left: 10px;
+    font-weight: bold;
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    @include border-radius();
+    background-color: white;
+    color: black;
+    @include transition();
+    &:hover {
+        padding: 10px;
+        margin: 10px;
+    }
+}
+
 .result_box {
     display: flex;
     justify-content: right;

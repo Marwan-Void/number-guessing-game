@@ -1,13 +1,13 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
-import { Range, Times } from "../page";
+import { Range, Attempts } from "../page";
 import styles from "./page.module.css";
 import Link from "next/link";
 
 const random_num: number = Math.floor(Math.random() * Range.Medium_Imp);
 export default function Medium(): JSX.Element {
     const [num, set_num] = useState<number>(random_num);
-    const [counter, set_counter] = useState<number>(Times.Medium);
+    const [counter, set_counter] = useState<number>(Attempts.Medium);
     const [wins, set_wins] = useState<number>(0);
     const [loses, set_loses] = useState<number>(0);
     const [player_status, set_player_status] = useState<string>("");
@@ -48,7 +48,7 @@ export default function Medium(): JSX.Element {
         }
     }
     function handle_again(): void {
-        set_counter(Times.Medium);
+        set_counter(Attempts.Medium);
         set_player_status("");
         set_num(Math.floor(Math.random() * Range.Medium_Imp));
         inp.current?.focus();
@@ -95,7 +95,7 @@ export default function Medium(): JSX.Element {
                             <br />
                             <span className={styles.bold}> range (0 - {Range.Medium_Imp - 1}) </span>
                             <br />
-                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Times.Medium} Times Only.</span>
+                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Attempts.Medium} Attempts Only.</span>
                         </p>
                         <span className={styles.bold}> Left: {counter} </span>
                     </div>

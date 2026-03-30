@@ -1,6 +1,6 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
-import { Range, Times } from "../page";
+import { Range, Attempts } from "../page";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -68,6 +68,7 @@ export default function One_Time(): JSX.Element {
     return (
         <div className={styles.page}>
             <Link href={"../"} className={styles.exit_btn} ref={exit_btn}> Exit </Link>
+            <Link href={"../free-mode"} className={styles.next_btn}> Next </Link>
             <Link href={"../impossible"} className={styles.back_btn}> Back </Link>
             <aside className={styles.result_box}>
                 <span className={styles.result_txt_win}> Wins: {wins} </span>
@@ -83,7 +84,7 @@ export default function One_Time(): JSX.Element {
                             <br />
                             <span className={styles.bold}> range (0 - {Range.Easy_OneTime - 1}) </span>
                             <br />
-                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Times.OneTime} Time Only.</span>
+                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Attempts.OneTime} Attempt Only.</span>
                         </p>
                     </div>
                     <div className={player_status != "You Win." && player_status != "You Lose." ? styles.inp_box : styles.none}>

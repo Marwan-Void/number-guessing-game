@@ -3,7 +3,7 @@
     @extend %flex_center;
     min-height: 100%;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .controls {
@@ -100,12 +100,12 @@
 .level_box {
     @extend %flex_center;
     flex-direction: column;
-    padding: 12px;
+    padding: 7px;
     width: 100%;
     border: 1px solid black;
     @include transition();
     &:hover {
-        padding: 15px;
+        padding: 8px;
     }
 }
 
@@ -125,11 +125,11 @@
 .choose_title {
     @include border-radius();
     border: 2px solid white;
-    padding: 20px;
+    padding: 15px;
     @include transition();
     &:hover {
-        padding: 25px;
-        margin: 25px;
+        padding: 20px;
+        margin: 10px;
     }
 }
 
@@ -155,15 +155,15 @@
     display: inline-block;
     width: 100%;
     padding: 10px;
-    margin: 10px;
+    margin: 8px;
     border: 2px solid white;
     @include border-radius();
     color: black;
     font-weight: bold;
     @include transition();
     &:hover {
-        padding: 20px;
-        margin: 20px;
+        padding: 15px;
+        margin: 10px;
     }
 }
 
@@ -175,10 +175,6 @@
 .medium {
     background-color: yellow;
     color: black;
-    .score::selection {
-        background-color: black;
-        color: white;
-    }
 }
 
 .hard {
@@ -206,6 +202,17 @@
     background-color: grey;
 }
 
+.free_mode {
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+.medium .score::selection, .free_mode .score::selection {
+    background-color: black;
+    color: white;
+}
+
 .total {
     background-color: black;
 }
@@ -213,10 +220,9 @@
 .footer {
     position: absolute;
     bottom: 0;
-    margin: auto;
+    right: 0;
     padding: 20px;
     z-index: 100;
-    background-color: black;
     @include border-radius();
 }
 

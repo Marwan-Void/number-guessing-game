@@ -8,16 +8,15 @@ export enum Range {
   Medium_Imp = 101,
   Hard_Extreme = 1001,
 }
-export enum Times {
+export enum Attempts {
   Easy_Imp = 4,
-  Medium = 6,
+  Medium = 8,
   Hard = 12,
   Extreme = 10,
   OneTime = 1
 }
 
 class Level {
-  private static _counter: number = 0;
   wins: (string | number);
   loses: (string | number);
   type_of_obj: string;
@@ -25,11 +24,6 @@ class Level {
     this.wins = wins;
     this.loses = loses;
     this.type_of_obj = kind;
-    Level._counter++;
-  }
-
-  static get all_objs(): number {
-    return (Level._counter);
   }
 }
 
@@ -50,6 +44,7 @@ export default function Home(): JSX.Element {
   const [ext, set_ext] = useState<Level>(new Level());
   const [imp, set_imp] = useState<Level>(new Level());
   const [one_time, set_one_time] = useState<Level>(new Level());
+  const [free_mode, set_free_mode] = useState<Level>(new Level());
   const total: Level = new Level(
     sum(
       easy.wins as string,
@@ -58,6 +53,7 @@ export default function Home(): JSX.Element {
       ext.wins as string,
       imp.wins as string,
       one_time.wins as string,
+      free_mode.wins as string,
     ),
     sum(
       easy.loses as string,
@@ -66,6 +62,7 @@ export default function Home(): JSX.Element {
       ext.loses as string,
       imp.loses as string,
       one_time.loses as string,
+      free_mode.loses as string,
     ),
     "Total Obj"
   ); 
@@ -75,6 +72,7 @@ export default function Home(): JSX.Element {
   const ext_btn = useRef(null);
   const imp_btn = useRef(null);
   const one_time_btn = useRef(null);
+  const free_mode_btn = useRef(null);
 
   function handle_hide_aside(): void {
     set_aside_visibility(false);
@@ -117,6 +115,11 @@ export default function Home(): JSX.Element {
       localStorage.getItem("one_time_loses") || "0",
       "Storage Obj"
     );
+    const saved_free_mode: Level = new Level(
+      localStorage.getItem("free_mode_wins") || "0",
+      localStorage.getItem("free_mode_loses") || "0",
+      "Storage Obj"
+    );
     setTimeout(function (): void {
       set_easy(saved_easy);
       set_med(saved_med);
@@ -124,6 +127,7 @@ export default function Home(): JSX.Element {
       set_ext(saved_ext);
       set_imp(saved_imp);
       set_one_time(saved_one_time);
+      set_free_mode(saved_free_mode);
     }, 0);
   }, []);
   return (
@@ -165,6 +169,10 @@ export default function Home(): JSX.Element {
             <span className={`${styles.score}`}>Wins: {one_time.wins}</span>
             <span className={`${styles.score}`}>Loses: {one_time.loses}</span>
           </div>
+          <div className={`${styles.free_mode} ${styles.level_box}`}>
+            <span className={`${styles.score}`}>Wins: {free_mode.wins}</span>
+            <span className={`${styles.score}`}>Loses: {free_mode.loses}</span>
+          </div>
           <div className={`${styles.total} ${styles.level_box}`}>
             <span className={`${styles.score}`}>Total Wins: {total.wins}</span>
             <span className={`${styles.score}`}>Total Loses: {total.loses}</span>
@@ -182,6 +190,7 @@ export default function Home(): JSX.Element {
             <Link href={"./extreme"} className={`${styles.choice_btn} ${styles.extreme}`} ref={ext_btn}> Extreme </Link>
             <Link href={"./impossible"} className={`${styles.choice_btn} ${styles.imp}`} ref={imp_btn}> Impossible </Link>
             <Link href={"./one-time"} className={`${styles.choice_btn} ${styles.one_time}`} ref={one_time_btn}> 1 Time </Link>
+            <Link href={"./free-mode"} className={`${styles.choice_btn} ${styles.free_mode}`} ref={free_mode_btn}> Free Mode </Link>
           </div>
         </div>
       </main>
