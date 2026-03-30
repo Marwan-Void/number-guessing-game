@@ -62,11 +62,11 @@
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
-    box-shadow: black 0px 0px 5px;
+    box-shadow: black 0 0 5px;
     @include border-radius();
     @include transition();
     &:hover {
-        box-shadow: black 0px 0px 15px;
+        box-shadow: black 0 0 15px;
         padding: 25px;
     }
 }
@@ -79,7 +79,7 @@
     &:hover {
         padding: 10px 30px;
         margin: 10px;
-        box-shadow: black 0px 0px 5px;
+        box-shadow: black 0 0 5px;
     }
 }
 
@@ -93,7 +93,7 @@
     @include border-radius();
     padding: 10px;
     margin: 10px;
-    box-shadow: black 0px 0px 5px;
+    box-shadow: black 0 0 5px;
     & * {
         margin: 5px;
     }
@@ -101,4 +101,17 @@
 
 .range_inp {
     width: 100%;
+}
+
+.start_btn {
+    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    background-color: black;
+    color: white;
+    @include border-radius();
+    @include transition();
+    &:hover {
+        box-shadow: black 0 0 10px;
+    }
 }

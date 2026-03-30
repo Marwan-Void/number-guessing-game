@@ -78,6 +78,12 @@ export default function FreeMode(): JSX.Element {
                     />
                     <label className={styles.range_label}>{max_range}</label>
                 </div>
+                <Link 
+                    href={"./free-game-mode"} 
+                    className={styles.start_btn}
+                >
+                    Start Game
+                </Link>
             </motion.main>
         </div>
     );
