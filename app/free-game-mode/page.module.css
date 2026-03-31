@@ -8,7 +8,7 @@
   color: black;
 }
 
-.page, .main, .select_range_box {
+.page, .main, .game_box, .inp_box {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,35 +172,57 @@
   box-shadow: black 0 0 5px;
 }
 
-.max_range_para {
-  padding: 5px;
-}
-
-.select_range_box {
+.result_box {
+  display: flex;
+  justify-content: right;
+  align-items: top;
   flex-direction: column;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: black 0 0 5px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
-  padding: 10px;
-  margin: 10px;
-  box-shadow: black 0 0 5px;
+  background-color: white;
+  color: black;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
 }
-.select_range_box * {
-  margin: 5px;
+.result_box:hover {
+  padding: 12px;
+  margin: 15px;
+  box-shadow: black 0 0 10px;
 }
 
-.range_inp {
-  width: 100%;
+.result_txt_win, .result_txt_lose {
+  margin: 10px;
 }
 
-.start_btn {
-  font-weight: bold;
-  padding: 10px;
-  margin: 10px;
+.result_txt_win::-moz-selection, .result_txt_lose::-moz-selection {
   background-color: black;
   color: white;
+}
+
+.result_txt_win::selection,
+.result_txt_lose::selection {
+  background-color: black;
+  color: white;
+}
+
+.game_box {
+  flex-direction: column;
+  padding: 30px;
+  margin: 30px;
+  box-shadow: black 0 0 5px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -212,8 +234,147 @@
   -ms-transition: 0.7s ease;
   -o-transition: 0.7s ease;
 }
-.start_btn:hover {
+.game_box:hover {
+  padding: 50px;
+  margin: 50px;
   box-shadow: black 0 0 10px;
+}
+
+.info_box {
+  padding: 10px;
+  margin: 5px;
+}
+
+.rules_p {
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 5px;
+  margin: 5px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.rules_p:hover {
+  padding: 15px;
+  margin: 15px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.inp_box {
+  padding: 10px;
+  box-shadow: black 0 0 5px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.inp_box:hover {
+  padding: 20px;
+  margin: 5px;
+  box-shadow: black 0 0 10px;
+}
+
+.inp {
+  font-weight: bold;
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.inp:hover {
+  padding: 10px;
+  margin: 15px;
+}
+.inp::-moz-selection {
+  background-color: black;
+  color: white;
+}
+.inp::selection {
+  background-color: black;
+  color: white;
+}
+
+.submit_btn {
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.submit_btn:hover {
+  padding: 10px;
+  margin: 10px;
+}
+
+.status_box {
+  padding: 10px;
+  margin: 10px;
+  box-shadow: black 0 0 5px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.status_box:hover {
+  padding: 20px;
+  margin: 20px;
+}
+
+.status_txt {
+  font-weight: bold;
+}
+
+.rem_5 {
+  font-size: 5rem;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.none {
+  display: none;
 }
 
 .footer {
