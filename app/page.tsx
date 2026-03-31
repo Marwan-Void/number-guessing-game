@@ -116,8 +116,8 @@ export default function Home(): JSX.Element {
       "Storage Obj"
     );
     const saved_free_mode: Level = new Level(
-      localStorage.getItem("free_mode_wins") || "0",
-      localStorage.getItem("free_mode_loses") || "0",
+      localStorage.getItem("free_game_wins") || "0",
+      localStorage.getItem("free_game_loses") || "0",
       "Storage Obj"
     );
     setTimeout(function (): void {

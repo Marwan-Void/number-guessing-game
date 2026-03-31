@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import styles from "./page.module.css";
 import Link from "next/link";
 
+export let game_range: number = 6;
+export let game_attempts: number = 1;
 export default function FreeMode(): JSX.Element {
     const [max_range, set_max_range] = useState<number>(5);
     const [max_attempts, set_max_attempts] = useState<number>(1);
@@ -79,12 +81,19 @@ export default function FreeMode(): JSX.Element {
                     <label className={styles.range_label}>{max_range}</label>
                 </div>
                 <Link 
-                    href={"./free-game-mode"} 
+                    href={"../free-game-mode"} 
                     className={styles.start_btn}
+                    onClick={function (): void {
+                        game_range = max_range + 1;
+                        game_attempts = max_attempts;
+                    }}
                 >
                     Start Game
                 </Link>
             </motion.main>
+            <footer className={styles.footer}>
+                <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Codex</p>
+            </footer>
         </div>
     );
 }
