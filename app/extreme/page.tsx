@@ -1,13 +1,13 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
-import { Range, Times } from "../page";
+import { Range, Attempts } from "../page";
 import styles from "./page.module.css";
 import Link from "next/link";
 
 const random_num: number = Math.floor(Math.random() * Range.Hard_Extreme);
 export default function Extreme(): JSX.Element {
     const [num, set_num] = useState<number>(random_num);
-    const [counter, set_counter] = useState<number>(Times.Extreme);
+    const [counter, set_counter] = useState<number>(Attempts.Extreme);
     const [wins, set_wins] = useState<number>(0);
     const [loses, set_loses] = useState<number>(0);
     const [player_status, set_player_status] = useState<string>("");
@@ -48,7 +48,7 @@ export default function Extreme(): JSX.Element {
         }
     }
     function handle_again(): void {
-        set_counter(Times.Extreme);
+        set_counter(Attempts.Extreme);
         set_player_status("");
         set_num(Math.floor(Math.random() * Range.Hard_Extreme));
         inp.current?.focus();
@@ -95,7 +95,7 @@ export default function Extreme(): JSX.Element {
                             <br />
                             <span className={styles.bold}> range (0 - {Range.Hard_Extreme - 1}) </span>
                             <br />
-                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Times.Extreme} Times Only.</span>
+                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Attempts.Extreme} Attempts Only.</span>
                         </p>
                         <span className={styles.bold}> Left: {counter} </span>
                     </div>

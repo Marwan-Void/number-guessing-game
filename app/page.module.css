@@ -49,7 +49,7 @@
 .page {
   min-height: 100%;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .controls {
@@ -168,7 +168,7 @@
 
 .level_box {
   flex-direction: column;
-  padding: 12px;
+  padding: 7px;
   width: 100%;
   border: 1px solid black;
   transition: 0.7s ease;
@@ -178,7 +178,7 @@
   -o-transition: 0.7s ease;
 }
 .level_box:hover {
-  padding: 15px;
+  padding: 8px;
 }
 
 .score {
@@ -200,7 +200,7 @@
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   border: 2px solid white;
-  padding: 20px;
+  padding: 15px;
   transition: 0.7s ease;
   -webkit-transition: 0.7s ease;
   -moz-transition: 0.7s ease;
@@ -208,8 +208,8 @@
   -o-transition: 0.7s ease;
 }
 .choose_title:hover {
-  padding: 25px;
-  margin: 25px;
+  padding: 20px;
+  margin: 10px;
 }
 
 .choices_box {
@@ -236,7 +236,7 @@
   display: inline-block;
   width: 100%;
   padding: 10px;
-  margin: 10px;
+  margin: 8px;
   border: 2px solid white;
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -252,8 +252,8 @@
   -o-transition: 0.7s ease;
 }
 .choice_btn:hover {
-  padding: 20px;
-  margin: 20px;
+  padding: 15px;
+  margin: 10px;
 }
 
 .easy {
@@ -264,14 +264,6 @@
 .medium {
   background-color: yellow;
   color: black;
-}
-.medium .score::-moz-selection {
-  background-color: black;
-  color: white;
-}
-.medium .score::selection {
-  background-color: black;
-  color: white;
 }
 
 .hard {
@@ -293,6 +285,22 @@
   background-color: grey;
 }
 
+.free_mode {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.medium .score::-moz-selection, .free_mode .score::-moz-selection {
+  background-color: black;
+  color: white;
+}
+
+.medium .score::selection, .free_mode .score::selection {
+  background-color: black;
+  color: white;
+}
+
 .total {
   background-color: black;
 }
@@ -300,10 +308,9 @@
 .footer {
   position: absolute;
   bottom: 0;
-  margin: auto;
+  right: 0;
   padding: 20px;
   z-index: 100;
-  background-color: black;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;

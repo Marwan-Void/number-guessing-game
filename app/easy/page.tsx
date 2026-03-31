@@ -1,13 +1,13 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
-import { Range, Times } from "../page";
+import { Range, Attempts } from "../page";
 import styles from "./page.module.css";
 import Link from "next/link";
 
 const random_num: number = Math.floor(Math.random() * Range.Easy_OneTime);
 export default function Easy(): JSX.Element {
     const [num, set_num] = useState<number>(random_num);
-    const [counter, set_counter] = useState<number>(Times.Easy_Imp);
+    const [counter, set_counter] = useState<number>(Attempts.Easy_Imp);
     const [wins, set_wins] = useState<number>(0);
     const [loses, set_loses] = useState<number>(0);
     const [player_status, set_player_status] = useState<string>("");
@@ -48,7 +48,7 @@ export default function Easy(): JSX.Element {
         }
     }
     function handle_again(): void {
-        set_counter(Times.Easy_Imp);
+        set_counter(Attempts.Easy_Imp);
         set_player_status("");
         set_num(Math.floor(Math.random() * Range.Easy_OneTime));
         inp.current?.focus();
@@ -94,7 +94,7 @@ export default function Easy(): JSX.Element {
                             <br />
                             <span className={styles.bold}> range (0 - {Range.Easy_OneTime - 1}) </span>
                             <br />
-                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Times.Easy_Imp} Times Only.</span>
+                            You Have <span className={`${styles.bold} ${styles.italic}`}> {Attempts.Easy_Imp} Attempts Only.</span>
                         </p>
                         <span className={styles.bold}> Left: {counter} </span>
                     </div>
