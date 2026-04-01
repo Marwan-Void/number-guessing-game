@@ -231,3 +231,141 @@
     margin: auto;
     padding: 20px;
 }
+
+@media (max-width: 470px){
+    .main {
+        padding: 10px;
+        &:hover {
+            padding: 10px;
+        }
+    }
+
+    .main_title {
+        &:hover {
+            padding: 5px;
+            margin: 5px;
+            box-shadow: black 0 0 0;
+        }
+    }
+
+    .game_box {
+        padding: 20px;
+        margin: 20px;
+        box-shadow: black 0 0 5px;
+        @include border-radius();
+        @include transition();
+        &:hover {
+            padding: 20px;
+            margin: 20px;
+            box-shadow: black 0 0 10px;
+        }
+    }
+}
+
+@media (max-width: 420px){
+    .inp_box {
+        &:hover {
+            padding: 10px;
+            margin: 0;
+        }
+    }
+
+    .inp {
+        margin: 5px;
+        &:hover {
+            padding: 5px;
+            margin: 10px;
+        }
+    }
+
+    .submit_btn {
+        &:hover {
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+}
+
+@media (max-width: 390px){
+    .result_box {
+        &:hover {
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+
+    .info_box {
+        padding: 5px;
+        margin: 0;
+    }
+
+    .rules_p {
+        &:hover {
+            padding: 8px;
+            margin: 5px;
+        }
+    }
+
+    .inp {
+        padding: 3px;
+        margin: 5px;
+        &:hover {
+            padding: 3px;
+            margin: 5px;
+        }
+    }
+}
+
+@media (max-width: 355px){
+    .game_box {
+        padding: 10px;
+        margin: 10px;
+        &:hover {
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+}
+
+@media (max-width: 320px){
+    .game_box {
+        padding: 5px;
+        margin: 5px;
+        &:hover {
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+}
+
+@media (max-width: 305px){
+    .game_box {
+        padding: 2px;
+        margin: 2px;
+        &:hover {
+            padding: 2px;
+            margin: 2px;
+        }
+    }
+}
+
+@media (max-width: 300px){
+    .game_box {
+        padding: 1px;
+        margin: 0;
+        &:hover {
+            padding: 1px;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: 270px){
+    .inp_box {
+        flex-direction: column;
+    }
+
+    .submit_btn {
+        width: 100%;
+    }
+}
