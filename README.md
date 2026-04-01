@@ -3,8 +3,7 @@
 System Chooses a Random Number and You Should Guess That Number.
 
 ## New Updates:
-#### Adding New Page (Free Game Page)
-#### In This Page You Can Choose Your Range And Attempts Freely
+#### Making Responsive Design to Free Game Mode
 
 ## Used Tech:
 1. React + TSX + Next.js
