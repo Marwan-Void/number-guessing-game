@@ -204,7 +204,7 @@
     @include border-radius();
     @include transition();
     &:hover {
-        padding: 20px;
+        padding: 15px;
         margin: 20px;
     }
 }

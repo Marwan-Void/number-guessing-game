@@ -188,8 +188,8 @@
     @include border-radius();
     @include transition();
     &:hover {
-        padding: 30px;
-        margin: 30px;
+        padding: 15px;
+        margin: 20px;
     }
 }
 

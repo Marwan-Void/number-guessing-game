@@ -22,17 +22,17 @@ export default function Extreme(): JSX.Element {
             if(val == num){
                 set_wins(wins + 1);
                 localStorage.setItem("ext_wins", (wins + 1).toString());
-                set_player_status("You Win.");
+                set_player_status("Win.");
             }
             else if(val > (Range.Hard_Extreme - 1) || val < 0){
-                set_player_status(`The Number is between 0 and ${Range.Hard_Extreme - 1} ( and also can be ${Range.Hard_Extreme - 1} or 0 )`);
+                set_player_status(`Between 0 and ${Range.Hard_Extreme - 1} ( also can be ${Range.Hard_Extreme - 1} or 0 )`);
             }
             else if(val > num){
-                set_player_status("The Number is Smaller Than That...");
+                set_player_status("Lower...");
                 set_counter(counter - 1);
             }
             else if(val < num){
-                set_player_status("The Number is Bigger Than That...");
+                set_player_status("Higher...");
                 set_counter(counter - 1);
             }
             else {
@@ -43,7 +43,7 @@ export default function Extreme(): JSX.Element {
             if(counter == 1 && val != num){
                 set_loses(loses + 1);
                 localStorage.setItem("ext_loses", (loses + 1).toString());
-                set_player_status("You Lose.");
+                set_player_status("Lose.");
             }
         }
     }
@@ -51,7 +51,9 @@ export default function Extreme(): JSX.Element {
         set_counter(Attempts.Extreme);
         set_player_status("");
         set_num(Math.floor(Math.random() * Range.Hard_Extreme));
-        inp.current?.focus();
+        setTimeout(function (): void {
+            inp.current?.focus();
+        }, 500);
     }
     function handle_key_down(event: React.KeyboardEvent<HTMLInputElement>): void {
         if(event.code == "Enter"){
@@ -86,9 +88,9 @@ export default function Extreme(): JSX.Element {
                 <span className={styles.result_txt_lose}> Loses: {loses} </span>
             </aside>
             <main className={styles.main}>
-                <h1 className={styles.main_title}>Extreme Mode</h1>
+                <h1 className={player_status != "Win." && player_status != "Lose." ? styles.main_title : styles.none}>Extreme Mode</h1>
                 <div className={styles.game_box}>
-                    <div className={player_status != "You Win." && player_status != "You Lose." ? styles.info_box : styles.none}>
+                    <div className={player_status != "Win." && player_status != "Lose." ? styles.info_box : styles.none}>
                         <h2>Rules</h2>
                         <p className={styles.rules_p}>
                             You Should Guess The Number in 
@@ -99,30 +101,30 @@ export default function Extreme(): JSX.Element {
                         </p>
                         <span className={styles.bold}> Left: {counter} </span>
                     </div>
-                    <div className={player_status != "You Win." && player_status != "You Lose." ? styles.inp_box : styles.none}>
+                    <div className={player_status != "Win." && player_status != "Lose." ? styles.inp_box : styles.none}>
                         <input 
                             type="text" 
                             className={styles.inp} 
                             onKeyDown={handle_key_down} 
                             enterKeyHint="done" 
-                            inputMode="tel"
+                            inputMode="numeric"
                             pattern="[0-9]*"
                             ref={inp}/>
                         <button onClick={handle_click} className={styles.submit_btn}> Submit </button>
                     </div>
                     <div 
-                    className={player_status == "You Win." || player_status == "You Lose." ? `${styles.status_box} ${styles.rem_5} ${styles.pointer}` 
+                    className={player_status == "Win." || player_status == "Lose." ? `${styles.status_box} ${styles.rem_5} ${styles.pointer}` 
                         : player_status.length != 0 ? styles.status_box 
                         : styles.none} 
-                    onClick={player_status == "You Win." || player_status == "You Lose." ? handle_again : (): void => {}}>
+                    onClick={player_status == "Win." || player_status == "Lose." ? handle_again : (): void => {}}>
                         <span className={player_status.length != 0 ? styles.status_txt : styles.none}>{player_status}</span>
                         <br />
-                        <span className={player_status == "You Lose." ? styles.bold : styles.none}>It&apos;s {num}</span>
+                        <span className={player_status == "Lose." ? styles.bold : styles.none}>It&apos;s {num}</span>
                     </div>
                 </div>
             </main>
             <footer className={styles.footer}>
-                <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Codex</p>
+                <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</p>
             </footer>
         </div>
     );

@@ -46,7 +46,7 @@ export default function FreeMode(): JSX.Element {
                     <input 
                         type="range" 
                         id="attempts_inp"
-                        defaultValue={1}
+                        defaultValue={game_attempts}
                         min="1" 
                         max="20"
                         onChange={
@@ -68,7 +68,7 @@ export default function FreeMode(): JSX.Element {
                     <input 
                         type="range" 
                         id="range_inp"
-                        defaultValue={5}
+                        defaultValue={game_range - 1}
                         min="5" 
                         max="1000"
                         onChange={
@@ -92,7 +92,7 @@ export default function FreeMode(): JSX.Element {
                 </Link>
             </motion.main>
             <footer className={styles.footer}>
-                <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Codex</p>
+                <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</p>
             </footer>
         </div>
     );
