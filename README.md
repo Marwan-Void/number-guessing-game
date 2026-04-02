@@ -3,7 +3,7 @@
 System Chooses a Random Number and You Should Guess That Number.
 
 ## New Updates:
-#### Making Responsive Design to Free Game Mode
+#### Changing Some Style And Some Text
 
 ## Used Tech:
 1. React + TSX + Next.js
@@ -11,8 +11,8 @@ System Chooses a Random Number and You Should Guess That Number.
 
 #### If You Have Any Advice Or You Found Any Issue, Please Tell Me.
 
-## To Visit The Site https://number-guessing-game-codex.vercel.app/
-## My Linktree https://linktr.ee/Marwan_Codex
+## To Visit The Site https://number-guessing-game-void.vercel.app/
+## My Linktree https://linktr.ee/Marwan_Void
 
 <!-- This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
