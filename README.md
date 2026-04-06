@@ -3,11 +3,12 @@
 System Chooses a Random Number and You Should Guess That Number.
 
 ## New Updates:
-#### .
+#### Add Warning to Controls Page
 
 ## Used Tech:
 1. React + TSX + Next.js
 2. Sass (.scss)
+3. Framer Motion Library
 
 #### If You Have Any Advice Or You Found Any Issue, Please Tell Me.
 
