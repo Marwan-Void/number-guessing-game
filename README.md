@@ -3,7 +3,7 @@
 System Chooses a Random Number and You Should Guess That Number.
 
 ## New Updates:
-#### Changing Some Style And Some Text
+#### .
 
 ## Used Tech:
 1. React + TSX + Next.js
