@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
 @keyframes to-top {
   from {
     transform: translateY(800px);
@@ -70,8 +78,8 @@
   -moz-transition: 0.7s ease;
   -ms-transition: 0.7s ease;
   -o-transition: 0.7s ease;
-  animation: 5s ease to-left;
-  -webkit-animation: 5s ease to-left;
+  animation: 2s ease to-left;
+  -webkit-animation: 2s ease to-left;
 }
 .controls:hover {
   padding: 15px;
@@ -189,8 +197,8 @@
 .main {
   flex-direction: column;
   background-color: black;
-  animation: 5s ease to-top;
-  -webkit-animation: 5s ease to-top;
+  animation: 2s ease to-top;
+  -webkit-animation: 2s ease to-top;
 }
 
 .choose_title {

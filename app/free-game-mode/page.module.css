@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
 @keyframes to-top {
   from {
     transform: translateY(800px);
@@ -263,14 +271,6 @@
 .rules_p:hover {
   padding: 15px;
   margin: 15px;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.italic {
-  font-style: italic;
 }
 
 .inp_box {

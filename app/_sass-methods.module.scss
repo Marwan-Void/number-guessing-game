@@ -41,6 +41,14 @@
     -o-transform: translateY($pxs);
 }
 
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
 @keyframes to-top {
     from {
         @include translate-y(800px);

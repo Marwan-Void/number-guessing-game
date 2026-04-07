@@ -133,14 +133,6 @@
     }
 }
 
-.bold {
-    font-weight: bold;
-}
-
-.italic {
-    font-style: italic;
-}
-
 .inp_box {
     @extend %flex_center;
     padding: 10px;

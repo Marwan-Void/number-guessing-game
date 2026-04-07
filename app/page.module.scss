@@ -16,8 +16,8 @@
     border: 2px solid white;
     @include border-radius();
     @include transition();
-    animation: 5s ease to-left;
-    -webkit-animation: 5s ease to-left;
+    animation: 2s ease to-left;
+    -webkit-animation: 2s ease to-left;
     &:hover {
         padding: 15px;
         margin: 20px;
@@ -115,11 +115,11 @@
 }
 
 .main {
-    @extend %flex_center;
+    @extend%flex_center;
     flex-direction: column;
     background-color: black;
-    animation: 5s ease to-top;
-    -webkit-animation: 5s ease to-top;
+    animation: 2s ease to-top;
+    -webkit-animation: 2s ease to-top;
 }
 
 .choose_title {

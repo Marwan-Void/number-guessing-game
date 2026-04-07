@@ -14,6 +14,14 @@
   align-items: center;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
 @keyframes to-top {
   from {
     transform: translateY(800px);
@@ -150,10 +158,6 @@
 
 .info_txt, .btn_txt {
   text-align: center;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .footer {
