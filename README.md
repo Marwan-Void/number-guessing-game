@@ -3,7 +3,7 @@
 System Chooses a Random Number and You Should Guess That Number.
 
 ## New Updates:
-#### Add Warning to Controls Page
+#### Making Animation Better and Smoother
 
 ## Used Tech:
 1. React + TSX + Next.js
