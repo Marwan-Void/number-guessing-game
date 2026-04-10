@@ -1,7 +1,8 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { game_range, game_attempts } from "../free-mode/page";
+import { motion, AnimatePresence } from "framer-motion";
+import { game_range, game_attempts } from "../page";
+import { parent_variants, item_variants, MotionLink } from "../../variants";
 import styles from "./page.module.css";
 import Link from "next/link";
 
@@ -14,6 +15,7 @@ export default function FreeGame(): JSX.Element {
     const [player_status, set_player_status] = useState<string>("");
     const inp = useRef<HTMLInputElement>(null);
     const exit_btn = useRef(null);
+    const sub_btn = useRef(null);
 
     function handle_click(): void {
             if(inp.current){
@@ -79,35 +81,43 @@ export default function FreeGame(): JSX.Element {
         });
     }, []);
     return (
-        <div className={styles.page}>
-            <Link href={"../"} className={styles.exit_btn} ref={exit_btn}>Exit</Link>
-            <Link href={"../free-mode"} className={styles.back_btn}>Back</Link>
-            <aside className={styles.result_box}>
-                <span className={styles.result_txt_win}> Wins: {wins} </span>
-                <span className={styles.result_txt_lose}> Loses: {loses} </span>
-            </aside>
-            <motion.main 
-                className={styles.main}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-            >
-                <h1 className={player_status != "Win." && player_status != "Lose." ? styles.main_title : styles.none}>Free Game Mode</h1>
-                <div className={styles.game_box}>
-                    <div className={player_status != "Win." && player_status != "Lose." ? styles.info_box : styles.none}>
-                        <h2>Rules</h2>
-                        <p className={styles.rules_p}>
-                            You Should Guess The Number in 
-                            <br />
-                            <span className={styles.bold}> range (0 - {game_range - 1}) </span>
-                            <br />
+        <motion.div className={styles.page} variants={parent_variants} initial="hidden" animate="visible">
+            <MotionLink 
+                href={"../"} 
+                className={styles.exit_btn} 
+                ref={exit_btn}
+                variants={item_variants}
+            >Exit</MotionLink>
+            <MotionLink 
+                href={"../free-mode"} 
+                className={styles.back_btn}
+                variants={item_variants}
+            >Back</MotionLink>
+            <motion.aside className={styles.result_box} variants={item_variants}>
+                <motion.span className={styles.result_txt_win} variants={item_variants}> Wins: {wins} </motion.span>
+                <motion.span className={styles.result_txt_lose} variants={item_variants}> Loses: {loses} </motion.span>
+            </motion.aside>
+            <motion.main className={styles.main} variants={item_variants}>
+                <motion.h1 
+                    className={
+                        player_status != "Win." && player_status != "Lose." 
+                        ? styles.main_title 
+                        : styles.none
+                    }
+                    variants={item_variants}
+                >Free Game Mode</motion.h1>
+                <motion.div className={styles.game_box} variants={item_variants}>
+                    <motion.div className={player_status != "Win." && player_status != "Lose." ? styles.info_box : styles.none} variants={item_variants}>
+                        <motion.h2 variants={item_variants}>Rules</motion.h2>
+                        <motion.p className={styles.rules_p} variants={item_variants}>
+                            You Should Guess The Number in
+                            <p className={styles.bold}> range (0 - {game_range - 1}) </p>
                             You Have <span className={`${styles.bold} ${styles.italic}`}> {game_attempts} Attempts Only.</span>
-                        </p>
-                        <span className={styles.bold}> Left: {counter} </span>
-                    </div>
-                    <div className={player_status != "Win." && player_status != "Lose." ? styles.inp_box : styles.none}>
-                        <input 
+                        </motion.p>
+                        <motion.span className={styles.bold} variants={item_variants}> Left: {counter} </motion.span>
+                    </motion.div>
+                    <motion.div className={player_status != "Win." && player_status != "Lose." ? styles.inp_box : styles.none} variants={item_variants}>
+                        <motion.input 
                             type="text" 
                             className={styles.inp} 
                             onKeyDown={handle_key_down} 
@@ -115,24 +125,37 @@ export default function FreeGame(): JSX.Element {
                             inputMode="numeric"
                             pattern="[0-9]*"
                             ref={inp}
+                            variants={item_variants}
                         />
-                        <button onClick={handle_click} className={styles.submit_btn}> Submit </button>
-                    </div>
-                    <div 
+                        <motion.button onClick={handle_click} className={styles.submit_btn} ref={sub_btn} variants={item_variants}>Submit</motion.button>
+                    </motion.div>
+                    <motion.div 
                         className={player_status == "Win." || player_status == "Lose." ? `${styles.status_box} ${styles.rem_5} ${styles.pointer}` 
                             : player_status.length != 0 ? styles.status_box 
                             : styles.none} 
                         onClick={player_status == "Win." || player_status == "Lose." ? handle_again : (): void => {}}
+                        variants={item_variants}
                     >
-                        <span className={player_status.length != 0 ? styles.status_txt : styles.none}>{player_status}</span>
-                        <br />
-                        <span className={player_status == "Lose." ? styles.bold : styles.none}>It&apos;s {num}</span>
-                    </div>
-                </div>
+                        <motion.p 
+                            key={
+                                player_status.length != 0 
+                                ? "show" 
+                                : "hide"
+                            } 
+                            className={
+                                player_status.length != 0 
+                                ? styles.status_txt 
+                                : styles.none
+                            }
+                            variants={item_variants}
+                        >{player_status}</motion.p>
+                        <motion.p className={player_status == "Lose." ? styles.bold : styles.none} variants={item_variants}>It&apos;s {num}</motion.p>
+                    </motion.div>
+                </motion.div>
             </motion.main>
-            <footer className={styles.footer}>
-                <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</p>
-            </footer>
-        </div>
+            <motion.footer className={styles.footer} variants={item_variants}>
+                <motion.p className={styles.copyright_para} variants={item_variants}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</motion.p>
+            </motion.footer>
+        </motion.div>
     );
 }

@@ -1,6 +1,8 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./page.module.css";
+import { parent_variants, item_variants } from "./variants";
 import Link from "next/link";
 
 export enum Range {
@@ -134,13 +136,19 @@ export default function Home(): JSX.Element {
     <div className={styles.page}>
       <Link href={"./controls"} className={styles.controls}>Controls</Link>
       <button type="button" aria-label="Open History Section" className={styles.appear_btn} onClick={handle_appear_aside}></button>
-      <aside className={`
-        ${styles.history_div} 
-        ${!aside_visibility && clicked 
-          ? `${styles.hidden} ${styles.hidden_ani}` 
-          : !aside_visibility && !clicked 
-          ? styles.hidden 
-          : styles.appear}`}>
+      <aside 
+        className={
+          `
+            ${styles.history_div} 
+            ${!aside_visibility && clicked 
+              ? `${styles.hidden} ${styles.hidden_ani}` 
+              : !aside_visibility && !clicked 
+              ? styles.hidden 
+              : styles.appear
+            }
+          `
+        }
+      >
         <div className={styles.history_txt_div}>
           <h2 className={styles.history_txt} onClick={handle_hide_aside}>History</h2>
         </div>
@@ -194,9 +202,9 @@ export default function Home(): JSX.Element {
           </div>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <p className={styles.copyright_para}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</p>
-      </footer>
+      <motion.footer className={styles.footer} variants={parent_variants} initial="hidden" animate="visible">
+        <motion.p className={styles.copyright_para} variants={item_variants}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</motion.p>
+      </motion.footer>
     </div>
   );
 }
