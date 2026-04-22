@@ -1,10 +1,9 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { game_range, game_attempts } from "../page";
-import { parent_variants, item_variants, MotionLink } from "../../variants";
+import { parent_variants, item_variants, MotionLink } from "../../exports";
 import styles from "./page.module.css";
-import Link from "next/link";
 
 const random_num: number = Math.floor(Math.random() * game_range);
 export default function FreeGame(): JSX.Element {

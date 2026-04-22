@@ -42,3 +42,16 @@ export const item_variants: {
     transition: { duration: 0.5 }
   },
 };
+
+export enum Range {
+  Easy_OneTime = 11,
+  Medium_Imp = 101,
+  Hard_Extreme = 1001,
+}
+export enum Attempts {
+  Easy_Imp = 4,
+  Medium = 8,
+  Hard = 12,
+  Extreme = 10,
+  OneTime = 1
+}

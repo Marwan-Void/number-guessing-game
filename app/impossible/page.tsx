@@ -1,6 +1,6 @@
 'use client';
 import { JSX, useEffect, useRef, useState } from "react";
-import { Range, Attempts } from "../page";
+import { Range, Attempts } from "../exports";
 import styles from "./page.module.css";
 import Link from "next/link";
 

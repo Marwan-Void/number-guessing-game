@@ -2,7 +2,7 @@
 import { JSX } from "react";
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
-import { parent_variants, item_variants, MotionLink } from "../variants";
+import { parent_variants, item_variants, MotionLink } from "../exports";
 
 export default function Controls(): JSX.Element {
   return (
@@ -42,7 +42,7 @@ export default function Controls(): JSX.Element {
           <motion.h1 className={styles.controls_title} variants={item_variants}>Document:</motion.h1>
           <motion.div className={styles.main_para} variants={item_variants}>
               <motion.p className={styles.doc_para} variants={item_variants}>
-                <motion.span className={`${styles.bold} ${styles.doc_heading}`} variants={item_variants}>Warning:</motion.span>
+                <motion.h6 className={`${styles.bold} ${styles.doc_heading}`} variants={item_variants}>Warning:</motion.h6>
                 <motion.p className={styles.doc_info} variants={item_variants}>
                   This Website Saves The Data in Your Browser&apos;s Local Storage, So If You Clear Your Browser Data or Use Incognito Mode or Entered The Website in Another Browser or Device You Will Not Find Your Data (You Can Find it in Your Browser if You Don&apos;t Delete Your Browser Data)
                 </motion.p>
@@ -56,7 +56,9 @@ export default function Controls(): JSX.Element {
         initial="hidden"
         animate="visible"
       >
-        <motion.p className={styles.copyright_para} variants={item_variants}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</motion.p>
+        <motion.p 
+          className={styles.copyright_para} variants={item_variants}
+        >&copy; 2026 - {new Date().getFullYear()} Marwan Void</motion.p>
       </motion.footer>
     </div>
   );

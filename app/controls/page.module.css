@@ -161,8 +161,25 @@
 }
 
 .doc_heading {
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 1.5em;
   margin-bottom: 10px;
+  transition: 0.7s ease;
+  -webkit-transition: 0.7s ease;
+  -moz-transition: 0.7s ease;
+  -ms-transition: 0.7s ease;
+  -o-transition: 0.7s ease;
+}
+.doc_heading:hover {
+  border: 2px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
 }
 
 .doc_info {

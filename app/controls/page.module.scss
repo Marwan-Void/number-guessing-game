@@ -69,8 +69,16 @@
 }
 
 .doc_heading {
+    width: fit-content;
     font-size: 1.5em;
     margin-bottom: 10px;
+    @include transition();
+    &:hover {
+        border: 2px solid white;
+        @include border-radius();
+        padding: 20px;
+        margin: 10px;
+    }
 }
 
 .doc_info {

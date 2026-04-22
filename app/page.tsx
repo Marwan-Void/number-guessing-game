@@ -2,21 +2,8 @@
 import { JSX, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import styles from "./page.module.css";
-import { parent_variants, item_variants } from "./variants";
+import { parent_variants, item_variants } from "./exports";
 import Link from "next/link";
-
-export enum Range {
-  Easy_OneTime = 11,
-  Medium_Imp = 101,
-  Hard_Extreme = 1001,
-}
-export enum Attempts {
-  Easy_Imp = 4,
-  Medium = 8,
-  Hard = 12,
-  Extreme = 10,
-  OneTime = 1
-}
 
 class Level {
   wins: (string | number);
@@ -29,10 +16,10 @@ class Level {
   }
 }
 
-function sum(...sum_num: string[]): string {
+function sum(...nums: string[]): string {
   let result: number = 0;
-  for(let i: number = 0; i < sum_num.length; i++){
-    result += parseInt(sum_num[i]);
+  for(let i: number = 0; i < nums.length; i++){
+    result += parseInt(nums[i]);
   }
   return (result.toString());
 }
@@ -135,7 +122,13 @@ export default function Home(): JSX.Element {
   return (
     <div className={styles.page}>
       <Link href={"./controls"} className={styles.controls}>Controls</Link>
-      <button type="button" aria-label="Open History Section" className={styles.appear_btn} onClick={handle_appear_aside}></button>
+      <button 
+        type="button" 
+        aria-label="Open History Section" 
+        className={styles.appear_btn} 
+        onClick={handle_appear_aside}
+        title="History"
+      ></button>
       <aside 
         className={
           `
@@ -153,31 +146,31 @@ export default function Home(): JSX.Element {
           <h2 className={styles.history_txt} onClick={handle_hide_aside}>History</h2>
         </div>
         <div className={styles.levels_history}>
-          <div className={`${styles.easy} ${styles.level_box}`}>
+          <div className={`${styles.easy} ${styles.level_box}`} title="Easy Level Score">
             <span className={`${styles.score}`}>Wins: {easy.wins}</span>
             <span className={`${styles.score}`}>Loses: {easy.loses}</span>
           </div>
-          <div className={`${styles.medium} ${styles.level_box}`}>
+          <div className={`${styles.medium} ${styles.level_box}`} title="Medium Level Score">
             <span className={`${styles.score}`}>Wins: {med.wins}</span>
             <span className={`${styles.score}`}>Loses: {med.loses}</span>
           </div>
-          <div className={`${styles.hard} ${styles.level_box}`}>
+          <div className={`${styles.hard} ${styles.level_box}`} title="Hard Level Score">
             <span className={`${styles.score}`}>Wins: {hard.wins}</span>
             <span className={`${styles.score}`}>Loses: {hard.loses}</span>
           </div>
-          <div className={`${styles.extreme} ${styles.level_box}`}>
+          <div className={`${styles.extreme} ${styles.level_box}`} title="Extreme Level Score">
             <span className={`${styles.score}`}>Wins: {ext.wins}</span>
             <span className={`${styles.score}`}>Loses: {ext.loses}</span>
           </div>
-          <div className={`${styles.imp} ${styles.level_box}`}>
+          <div className={`${styles.imp} ${styles.level_box}`} title="Impossible Level Score">
             <span className={`${styles.score}`}>Wins: {imp.wins}</span>
             <span className={`${styles.score}`}>Loses: {imp.loses}</span>
           </div>
-          <div className={`${styles.one_time} ${styles.level_box}`}>
+          <div className={`${styles.one_time} ${styles.level_box}`} title="One-Time Level Score">
             <span className={`${styles.score}`}>Wins: {one_time.wins}</span>
             <span className={`${styles.score}`}>Loses: {one_time.loses}</span>
           </div>
-          <div className={`${styles.free_mode} ${styles.level_box}`}>
+          <div className={`${styles.free_mode} ${styles.level_box}`} title="Free-Mode Level Score">
             <span className={`${styles.score}`}>Wins: {free_mode.wins}</span>
             <span className={`${styles.score}`}>Loses: {free_mode.loses}</span>
           </div>
@@ -192,18 +185,20 @@ export default function Home(): JSX.Element {
         <div className={styles.choices_box}>
           <h2 className={styles.choose_title}>Choose Your Level</h2>
           <div className={styles.choices}>
-            <Link href={"./easy"} className={`${styles.choice_btn} ${styles.easy}`} ref={easy_btn}> Easy </Link>
-            <Link href={"./medium"} className={`${styles.choice_btn} ${styles.medium}`} ref={med_btn}> Medium </Link>
-            <Link href={"./hard"} className={`${styles.choice_btn} ${styles.hard}`} ref={hard_btn}> Hard </Link>
-            <Link href={"./extreme"} className={`${styles.choice_btn} ${styles.extreme}`} ref={ext_btn}> Extreme </Link>
-            <Link href={"./impossible"} className={`${styles.choice_btn} ${styles.imp}`} ref={imp_btn}> Impossible </Link>
-            <Link href={"./one-time"} className={`${styles.choice_btn} ${styles.one_time}`} ref={one_time_btn}> 1 Time </Link>
-            <Link href={"./free-mode"} className={`${styles.choice_btn} ${styles.free_mode}`} ref={free_mode_btn}> Free Mode </Link>
+            <Link href={"./easy"} className={`${styles.choice_btn} ${styles.easy}`} ref={easy_btn}>Easy</Link>
+            <Link href={"./medium"} className={`${styles.choice_btn} ${styles.medium}`} ref={med_btn}>Medium</Link>
+            <Link href={"./hard"} className={`${styles.choice_btn} ${styles.hard}`} ref={hard_btn}>Hard</Link>
+            <Link href={"./extreme"} className={`${styles.choice_btn} ${styles.extreme}`} ref={ext_btn}>Extreme</Link>
+            <Link href={"./impossible"} className={`${styles.choice_btn} ${styles.imp}`} ref={imp_btn}>Impossible</Link>
+            <Link href={"./one-time"} className={`${styles.choice_btn} ${styles.one_time}`} ref={one_time_btn}>1 Time</Link>
+            <Link href={"./free-mode"} className={`${styles.choice_btn} ${styles.free_mode}`} ref={free_mode_btn}>Free Mode</Link>
           </div>
         </div>
       </main>
       <motion.footer className={styles.footer} variants={parent_variants} initial="hidden" animate="visible">
-        <motion.p className={styles.copyright_para} variants={item_variants}>&copy; 2026 - {new Date().getFullYear()} Marwan Void</motion.p>
+        <motion.p 
+          className={styles.copyright_para} variants={item_variants}
+        >&copy; 2026 - {new Date().getFullYear()} Marwan Void</motion.p>
       </motion.footer>
     </div>
   );
